@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <!--<link rel="stylesheet" href="../css/centroscustos.css">-->
+    <script src="https://kit.fontawesome.com/c9e4967131.js" crossorigin="anonymous"></script>
+    <title>Centro Custos</title>
+    <script src="../js/funcoesFront.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="../js/transacaoFront.js" defer></script>
+    <link rel="stylesheet" href="../css/relatorio.css">
+    <link rel="stylesheet" href="../css/cCusto.css">
+</head>
+<body>
+    <header>
+        <div class="btn__responsive-relatorio" id="headerRelatorio"></div>
+        <div class="relatorio-header" >
+            <nav class="cabecalho-principal-nav-relatorio " id="headerNav" >
+                <ul class="cabecalho-principal-nav-relatorio-itens">
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a  home" href="/home">Home</a></li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a" href="/centroscustos">Centro de custo</a>
+                    </li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a" href="/relatorio">Relatorio</a>
+                    </li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a last"
+                            href="/transacao">Transação</a></li>
+                </ul>
+                <div class="cabecalho-principal-nav-btn btn-accout__relatorio">
+                    <button class="cabecalho-principal-nav-sign-in btn-accout__sign-in">Sign in</button>
+                    <button class="cabecalho-principal-nav-sign-up btn-accout__sign-up">Sign up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <picture class="relatorio-img__logo">
+        <source media="(max-width:530px )" srcset="../img/LogotipoMobile.png">
+        <img src="../img/Logotipo.png" alt="Logotipo">
+    </picture>
+
+    <main class="container">
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Centro de Custos</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+                    <div class="card">
+                        <div class="card-body">                           
+                            <form id="form">
+                               <div class="row">
+                                    <div class="col-1">
+                                        <label for="idCentroCusto" class="form-label">Id</label>
+                                        <input type="text" id="idCentroCusto" name="idCentroCusto" class="form-control" readonly>
+                                        
+                                    </div>
+                                    <div class="col-8">
+                                        <label for="nome" class="form-label">Centro de Custos</label>
+                                        <input type="text" name="nome" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="idtipo" class="form-label">Tipo</label>
+                                        <select name="idtipo" id="idtipo" class="form-select">
+                                            <option value="">Tipo</option>
+                                            <option value="1">Despesa</option>
+                                            <option value="2">Receita</option>
+                                            <option value="3">Investimento</option>
+                                        </select>
+                                    </div>
+                               </div>
+                            </form>
+                            <div class="modal-footer">
+                                <button onclick="gravarCcusto()" class="btn btn-success"> <i class="fas fa-save"></i> Gravar </button>
+                            </div>    
+                        </div>
+                    </div>  
+                </div>                
+              </div>
+            </div>
+          </div>
+          <div class="tabela-cCusto">
+              <div class="card">
+                    <div class="card-header bg-success">
+                        <h4 class="display-4 text-center text-light"><i class="fas fa-chart-bar"></i> Centro de Custos </h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table align-baseline table-striped table-hover table-sm text-center">
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Centro de Custo</th>
+                                    <th>
+                                        <span>Ações |</span>
+                                        <button class="btn btn-success mx-1" onclick="exibirModal()"><i class="fas fa-plus"></i></button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            </table>
+                            <div class="tbscroll">
+                            <table class="table table-striped align-baseline table-striped table-hover table-sm text-center">
+                                <tbody id="tabela">
+                                    <%dados.forEach(cCusto=>{%>
+                                        <tr>
+                                            <td><%=cCusto.tipo.dataValues.nomeTipo%></td>
+                                            <td><%=cCusto.nomeCentroCusto%></td>
+                                            <td>
+                                                <div>
+                                                    <button onclick=<%-'"editar(`/centroscustos`,'+cCusto.idCentroCusto+')"'%>  class="btn btn-primary fa fa-edit mx-1"></button>
+                                                    <button onclick=<%-'"accDelete(`/centroscustos`,'+cCusto.idCentroCusto+')"'%>  class="btn btn-danger fa fa-times mx-1"></button>
+                                                </div>
+                                              </td>
+                                        </tr>
+                                    <%})%>
+                            </table>
+                        </div>
+              
+                    </div>
+              </div>
+          </div>
+         
+    </main>
+    <%- include('./partials/footer.ejs')%>
+</body>

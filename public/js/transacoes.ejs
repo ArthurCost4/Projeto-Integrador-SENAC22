@@ -1,0 +1,16 @@
+<%
+parseFloatt = function(valor, valor2 = '', valor3 = '') {
+    console.log('vetores:'+valor,valor2, valor3)
+    var sub = parseFloat(valor2 + valor3)
+    if (sub) {
+        let total = valor-sub
+        dinheiro = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        return dinheiro
+    }
+    var dinheiro = valor
+    
+    dinheiro = dinheiro.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    return dinheiro
+}
+
+%>

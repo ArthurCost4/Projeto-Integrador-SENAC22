@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor1: rgb(78, 207, 106);
+    --cor2: rgba(78, 207, 106, 0.548);
+    --cor3: rgba(140, 99, 207, 0.656);
+}
+
+body {
+    overflow: hidden;
+}
+
+#inicio {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    top: 80px;
+    justify-content: center;
+}
+#inicio a{
+    text-decoration: underline;
+}
+
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    position: relative;
+}
+
+.login h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.login img {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 100%;
+
+}
+
+.row {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 4px 4px 12px;
+}
+
+.input {
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    -webkit-box-shadow: -1px 1px 30px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 30px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 30px -11px rgba(0, 0, 0, 0.75);
+}
+
+.btn1 {
+    height: 50px;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    background: var(--cor1);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn1:hover {
+    background-color: black;
+}
+
+@media(max-width:1325px){
+   .imagem{
+       display: none;
+   }
+   #divF{
+      margin:auto;
+   }
+}
+
+@media(max-width:992px){
+    #divF{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}

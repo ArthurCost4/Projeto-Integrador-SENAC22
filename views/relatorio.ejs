@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="../css/relatorio.css">
+    <script src="https://kit.fontawesome.com/c9e4967131.js" crossorigin="anonymous"></script>
+    <script src="../js/transacaoFront.js" defer></script>
+    <title>Relatório</title>
+</head>
+<body>
+    <picture class="relatorio-img__logo">
+        <source media="(max-width:530px )" srcset="../img/LogotipoMobile.png">
+        <img src="../img/Logotipo.png" alt="Logotipo">
+    </picture>
+
+    <header>
+        <div class="btn__responsive-relatorio" id="headerRelatorio"></div>
+        <div class="relatorio-header" >
+            <nav class="cabecalho-principal-nav-relatorio " id="headerNav" >
+                <ul class="cabecalho-principal-nav-relatorio-itens">
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a  home" href="/home">Home</a></li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a" href="/centroscustos">Centro de custo</a>
+                    </li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a" href="/relatorio">Relatorio</a>
+                    </li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a last"
+                            href="/transacao">Transação</a></li>
+                </ul>
+                <div class="cabecalho-principal-nav-btn btn-accout__relatorio">
+                    <button class="cabecalho-principal-nav-sign-in btn-accout__sign-in">Sign in</button>
+                    <button class="cabecalho-principal-nav-sign-up btn-accout__sign-up">Sign up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<main>
+    
+    <div class="tabela-relatorio__section">
+        <section class="relatorio-saida container">
+            <div class="row">
+                <div class="col-12 cardd">
+                    <div class="relatorio-saida-card relatorio__total">
+                        <div class="relatorio-saida-total-resultado">
+                            <div class="saida saida__total" >
+                                <h3><%= parseFloatt(dados.tipos[0].SomaValor, dados.tipos[1].SomaValor, dados.tipos[2].SomaValor)%></h3>
+                            </div>
+                        </div>
+                        <h2 class="relatorio-h2 relatorio-h2__total">Saldo restante</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 cardd">
+                    <div class="relatorio-saida-card relatorio__receita">
+                        <div class="relatorio-saida-receita-resultado">
+                            <div class="saida saida__receita"><% include('../public/js/transacoes.ejs') %>
+                                <h3><%= parseFloatt(dados.tipos[0].SomaValor) %> </h3>
+                            </div>
+                        </div>
+                
+                        <h2 class="relatorio-h2 relatorio-h2__receita"><%= dados.tipos[0]["centros_custo.tipo.nomeTipo"] %></h2>
+                    </div>
+                </div>
+                <div class="col-md-4 cardd">
+                    <div class="relatorio-saida-card relatorio__despesa">
+                        <div class="relatorio-saida-despesa-resultado">
+                            <div class="saida saida__despesa">
+                                <h3><%= parseFloatt(dados.tipos[2].SomaValor) %> </h3>
+                             </h3>
+                            </div>
+                        </div>
+                        <h2 class="relatorio-h2 relatorio-h2__despesa"><%= dados.tipos[2]["centros_custo.tipo.nomeTipo"] %></h2>
+                    </div>
+                </div>
+                <div class="col-md-4 cardd">
+                    <div class="relatorio-saida-card relatorio__investimento">
+                        <div class="relatorio-saida-investimento-resultado">
+                            <div class="saida saida__investimento">
+                                <h3><%= parseFloatt(dados.tipos[1].SomaValor) %> </h3>
+                            </div>
+                        </div>
+                
+                        <h2 class="relatorio-h2 relatorio-h2__investimento"><%= dados.tipos[1]["centros_custo.tipo.nomeTipo"] %></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container ">
+        <div class="row section-cards">
+            <% for( let x = 0; x < dados.centrosCustos.length; x++ ) { %>
+            
+                <div class="col-4 section-cards__modify">
+                    <div class="card">
+                        <% if (dados.centrosCustos[x]["centros_custo.tipo.idTipo"]==3) { %>
+                            <img class="img__card" src="../img/investimento.jpg" alt="imagem de investimento colocando moeda dentro do porquinho de moedas ">
+                        <% }else if(dados.centrosCustos[x]["centros_custo.tipo.idTipo"]==1) {%>
+                            <img class="img__card" src="../img/despesa.jpg" alt="imagem de despesa fazendo pagamento por cartão de credito">
+                        <% }else if(dados.centrosCustos[x]["centros_custo.tipo.idTipo"]==2) {%>
+                            <img class="img__card" src="../img/receita.jpg" alt="imagem de receita mão abanando dinheiro">
+                        <% } %>
+                        <div class="card-body ">
+                            <h4 class="card-tittle section-cards__titlle" id="tittleCard">
+                               <%= dados.centrosCustos[x]["centros_custo.tipo.nomeTipo"] %>
+                            </h4>
+                            <p class="card-text section-cards__text">
+                                <div class="section-cards__cCusto"><h5><%= dados.centrosCustos[x]["centros_custo.nomeCentroCusto"] %></h5></div>
+                                <div class="section-cards__valor"><h5><%= parseFloatt(dados.centrosCustos[x]["SomaValor"]) %></h5></div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        </section>
+        
+        
+    </div>
+</main>
+<%- include('./partials/footer.ejs')%>
+</body>

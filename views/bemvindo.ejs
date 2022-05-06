@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <%- include('./partials/head.ejs')%>
+        <link rel="stylesheet" href="../css/bemvindo.css">
+        <link rel="stylesheet" href="../css/relatorio.css">
+        <script src="../js/transacaoFront.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="btn__responsive-relatorio" id="headerRelatorio"></div>
+        <div class="relatorio-header">
+            <nav class="cabecalho-principal-nav-relatorio " id="headerNav">
+                <ul class="cabecalho-principal-nav-relatorio-itens">
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a  home" href="/home">Home</a></li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a" href="/centroscustos">Centro de custo</a>
+                    </li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a" href="/relatorio">Relatorio</a>
+                    </li>
+                    <li><a class="cabecalho-principal-nav-relatorio-itens-a last" href="/transacao">Transação</a></li>
+                </ul>
+                <div class="cabecalho-principal-nav-btn btn-accout__relatorio">
+                    <button class="cabecalho-principal-nav-sign-in btn-accout__sign-in">Sign in</button>
+                    <button class="cabecalho-principal-nav-sign-up btn-accout__sign-up">Sign up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="box" class="text-center center-div">
+            <div class="container border py-5 mt5 formulario">
+                <h3>Seja bem vindo ao nosso sistema</h3>
+                <p>Aqui você pode administrar suas despesas e receitas com segurança!</p>
+            </div>
+            <a class="btn" href="/centroscustos">Gerenciar minhas finanças agora!</a>
+        </div>
+    </main>
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

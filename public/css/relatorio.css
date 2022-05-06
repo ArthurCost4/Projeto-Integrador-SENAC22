@@ -1,0 +1,171 @@
+
+
+.relatorio-img__logo{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(36, 130, 57);
+}
+.cabecalho-principal-nav-relatorio{
+    width: 20rem;
+    position: absolute;
+    top: 0;
+    height: 29rem;
+    width: 0;
+    background-color: rgb(155, 212, 158);
+    border-radius: 5px;
+    display: block;
+    transition: .4s;
+    visibility: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.cabecalho-principal-nav-relatorio-itens{
+    margin-top: 6.5rem;
+}
+.cabecalho-principal-nav-relatorio-itens-a{
+    display: block;
+    padding: 1rem 1.5rem;
+    color: rgb(19, 18, 18);
+    transition: .4s linear;
+}
+.cabecalho-principal-nav-relatorio-itens-a:hover{
+    border-bottom: 2px #fff solid;
+    color: #fff;
+}
+.last::after{
+    content: '';
+    margin-top: 2rem;
+    display: inline;
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px rgb(19, 18, 18) solid;
+    border-right: none;
+    left: -2rem;
+}
+.btn-accout__relatorio{
+    display: flex;
+    text-align: center;
+    margin: 1rem ;
+}
+.btn-accout__sign-in{
+    color: rgb(19, 18, 18);
+    width: 8.4rem;
+    transition: .4s;
+}
+.btn-accout__sign-in:hover{
+    color: #fff;
+}
+.btn-accout__sign-up{
+    background-color: rgba(255, 255, 255, 0.137);
+    color: rgb(255, 255, 255);
+    width: 6.4rem;
+    transition: .5s ease;
+}
+.btn-accout__sign-up:hover{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.432);
+}
+.section-modal__intro{
+    background-color: rgb(222, 221, 236);
+    margin-top: 9rem;
+}
+.section-modal__btn-home{
+    margin-left: 2rem;
+    border: none;
+    background-color: #fff;
+    color: rgb(19, 18, 18);
+}
+.relatorio-saida{
+    margin-top: 8.5rem;
+}
+.relatorio-saida-card{
+    color: rgb(19, 18, 18);
+    margin: 2rem;
+    padding: 1rem;
+}
+.relatorio-saida-card:not(:first-child){
+    margin-left: 3rem;
+}
+.saida{
+    font-size: 1.5rem;
+}
+.saida__receita{
+    color: rgb(9, 161, 9);
+}
+.saida__despesa{
+    color: rgb(202, 10, 10);
+}
+.saida__investimento{
+    color: rgb(253, 136, 39);
+}
+.saida__total{
+    color: rgb(42, 42, 245);
+}
+.relatorio__total{
+    text-align: center;
+}
+.btn__table{
+    border-radius: 10px;
+    width: 3rem;
+}
+#headerNav{
+    z-index: 5;
+}
+.img__card{
+    width: 300px;
+}
+.section-cards{
+    margin:3rem 0;
+}
+.section-cards__modify{
+    margin: 2rem;
+    border-radius: 15px;
+    width: 400px;
+}
+.img__card{
+    border-radius: 15px;
+    margin: auto auto;
+    padding: .5rem;
+}
+.section-cards__titlle{
+    text-decoration: underline;
+    text-align: center;
+}
+
+/*==================responsive-items==================*/
+
+.btn__responsive-relatorio{
+    z-index: 100;
+    display: block;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 38px;
+    border-top: 3px rgb(19, 18, 18) solid;
+}
+.btn__responsive-relatorio::before, .btn__responsive-relatorio::after{
+    display: block;
+    content: '';
+    width: 38px;
+    border-top: 3px currentColor solid;
+    margin-top: 6px;
+}
+.btn__responsive-relatorio:hover{
+    cursor: pointer;
+}
+#headerNav.active{
+    width: 20rem;
+    visibility: visible;
+    z-index: 5;
+}
+
+@media screen and (max-width: 841px) {
+    .btn-accout__relatorio{
+        margin: 3rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    .cardd:not(:last-child){
+        margin-left: 2rem;
+    }
+}

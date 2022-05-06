@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <%- include('./partials/head.ejs')%>
+        <link rel="stylesheet" href="../css/login.css">
+        <script src="https://kit.fontawesome.com/feed27c0da.js" crossorigin="anonymous"></script>
+        <script src="../js/funcoesFront.js" defer></script>
+        <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <section class="login col-lg-7">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="imagem col-lg-7">
+                        <img src="../img/cadastro.png" class="img-fluid" alt="cadastro">
+                    </div>
+                    <div id="divF" class="col-lg-5 text-center">
+                        <h1 class="pt-5 mb-3">Cadastro</h1>
+                        <form id="form2">
+                            <div class="form-row py-4">
+                                <div class="offset-1 col-lg-10">
+                                    <input name="nome" type="text" class="input px-3" placeholder="Nome">
+                                </div>
+                            </div>
+
+                            <div class="form-row py-3">
+                                <div class="offset-1 col-lg-10">
+                                    <input name="email" type="text" id="email" class="input px-3" placeholder="Email ">
+                                </div>
+                            </div>
+
+                            <div class="form-row py-3">
+                                <div class="offset-1 col-lg-10">
+                                    <input name="senha" type="password" class="input px-3" placeholder="Senha ">
+                                </div>
+                            </div>
+
+                            <div class="form-row py-3">
+                                <div class="offset-1 col-lg-10">
+                                    <input name="senha2" type="password" class="input px-3"
+                                        placeholder="Repita a senha ">
+                                </div>
+                            </div>
+                            <div class="offset-1 col-lg-10">
+                                <button onclick="postCadastro()" class="btn1">Cadastrar</button>
+                                <br>
+                                <p style=" font-family: 'Poppins', sans-serif; color: rgb(98, 97, 97);">Já tem uma
+                                    conta? <a
+                                        style=" font-family: 'Poppins', sans-serif; color: black;font-weight: bold; text-decoration: underline"
+                                        href="http://localhost:8182/login">Login</a></p>
+                                <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="inicio">
+                <i style="font-size: 20px; margin-right: 10px;" class="fa-solid fa-left-long"></i><a
+                    href="http://localhost:8182/home"> Voltar para inicio</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <%- include('./partials/head.ejs')%>
+        <link rel="stylesheet" href="../css/login.css">
+        <script src="https://kit.fontawesome.com/feed27c0da.js" crossorigin="anonymous"></script>
+        <script src="../js/funcoesFront.js" defer></script>
+        <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <section class="login col-lg-7">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="imagem col-lg-7">
+                        <img src="../img/imgLogin.png" class="img-fluid" alt="login">
+                    </div>
+                    <div id="divF" class="col-lg-5 text-center">
+                        <h1 class="pt-5 pb-5">Login</h1>
+                        <form id="form">
+                            <div class="form-row py-3">
+                                <div class="offset-1 col-lg-10">
+                                    <input type="text" name="email" class="input" placeholder="Email ">
+                                </div>
+                            </div>
+
+                            <div class="form-row py-3">
+                                <div class="offset-1 col-lg-10">
+                                    <input type="password" name="senha" class="input px-3" placeholder="Senha ">
+                                </div>
+                            </div>
+                        </form>
+                        <br><br>
+                        <div class="offset-1 col-lg-10">
+                            <button onclick="autUsuario()" class="btn1">Entrar</button>
+                        </div>
+                        <a href="http://localhost:8182/cadastro"
+                            style="color: rgb(86, 85, 85); font-family: 'Poppins', sans-serif;">Crie sua conta <i
+                                style="font-size: 10px;" class="fa-solid fa-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div id="inicio">
+                <i style="font-size: 20px; margin-right: 10px;" class="fa-solid fa-left-long"></i><a
+                    href="http://localhost:8182/home"> Voltar para inicio</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
