@@ -1,5 +1,5 @@
 # GitHub dos colaboradores:
- * docente: [Leonardo Ignacio](https://github.com/leonardoignacio)
+ * Docente: [Leonardo Ignacio](https://github.com/leonardoignacio)
  
  * Aluno: [Arthur Costa](https://github.com/ArthurCost4)
  * Aluno: [Matheus Vinicius](https://github.com/AnaniasMv)
