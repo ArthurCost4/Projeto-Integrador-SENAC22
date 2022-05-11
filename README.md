@@ -1,5 +1,6 @@
 # GitHub dos colaboradores:
  * Docente: [Leonardo Ignacio](https://github.com/leonardoignacio)
+ * Docente: [Daniel Barretto](https://github.com/danbarretto)
  
  * Aluno: [Arthur Costa](https://github.com/ArthurCost4)
  * Aluno: [Matheus Vinicius](https://github.com/AnaniasMv)
